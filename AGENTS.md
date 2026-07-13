@@ -18,7 +18,17 @@ Notes:
 ## Development Checks
 
 - Before every commit, run `uv run ruff check .` and `uv run ruff format --check .`.
+- Run the relevant pytest target for the code you changed. For broad changes, run `uv run pytest`.
 - If formatting fails, run `uv run ruff format .`, then re-run the Ruff checks before committing.
+- For frontend changes, run `cd frontend && npm run lint && npm run build`.
+- OpenHands sessions should use `.openhands/setup.sh` for bootstrap and `.openhands/pre-commit.sh` before committing.
+
+## Issue and PR Workflow
+
+- Implementation work should start from a GitHub issue with acceptance criteria, validation commands, and out-of-scope notes.
+- Use one branch per issue. Keep PRs small enough to review independently.
+- PR descriptions must include the exact validation commands that were run.
+- Do not mark a PR ready for merge while CI is failing or required validation is unrun.
 
 ## GitHub CLI
 
